@@ -16,6 +16,7 @@ COPY . .
 RUN composer install --no-dev --optimize-autoloader \
     && mkdir -p writable/cache writable/logs writable/session writable/uploads writable/debugbar \
     && chown -R www-data:www-data writable \
-    && chmod -R 775 writable \
+    && chmod -R 777 writable \
+    && sed -ri 's!/var/www/html!/var/www/html/public!g' /etc/apache2/sites-available/*.conf /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
 EXPOSE 80
