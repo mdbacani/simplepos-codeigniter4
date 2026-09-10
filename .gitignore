@@ -1,0 +1,7 @@
+vendor/
+composer-setup.php
+writable/cache/*
+writable/debugbar/*
+writable/logs/*
+writable/session/*
+writable/uploads/*
